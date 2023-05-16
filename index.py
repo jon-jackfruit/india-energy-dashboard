@@ -1,6 +1,5 @@
 ### Import Packages ###
 from dash import Dash, html, dcc, callback, Output, Input
-import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
