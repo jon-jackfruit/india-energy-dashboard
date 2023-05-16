@@ -11,8 +11,4 @@ app = dash.Dash(
         )
 
 
-# add a static file server
-#from whitenoise import WhiteNoise
-#server.wsgi_app=WhiteNoise(server.wsgi_app, root='static/')
-
 

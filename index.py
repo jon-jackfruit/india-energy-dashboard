@@ -2,15 +2,19 @@
 from dash import Dash, html, dcc, callback, Output, Input
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
+from whitenoise import WhiteNoise
 
 
 ### Import Dash Instance and Pages ###
 from app import app
 from pages import page_1
 from pages import page_2
+from pages import discoms
 
 ### Create server for Heroku to call
 server = app.server
+# add a static file server
+server.wsgi_app=WhiteNoise(server.wsgi_app, root='static/')
 
 ### Sidebar ###
 # the style arguments for the sidebar. We use position:fixed and a fixed width
@@ -40,7 +44,7 @@ sidebar = html.Div(
         dbc.Nav(
             [
                 dbc.NavLink("Home", href="/", active="exact"),
-                dbc.NavLink("Page 1", href="/page-1", active="exact"),
+                dbc.NavLink("DISCOMs", href="/discoms", active="exact"),
                 dbc.NavLink("Page 2", href="/page-2", active="exact"),
             ],
             vertical=True,
@@ -77,16 +81,7 @@ app.layout = page_container
 ### Index Page Layout ###
 index_layout = html.Div(
     children=[
-        html.H2("India Energy Dashboard", className="display-4"),
-        dcc.Link(
-            children='Go to Page 1',
-            href='/page-1',
-        ),
-        html.Br(),
-        dcc.Link(
-            children='Go to Page 2',
-            href='/page-2',
-        ),
+        html.H3("Home", className="display-4"),
     ]
 )
 
@@ -97,6 +92,7 @@ app.validation_layout = html.Div(
         index_layout,
         page_1.layout,
         page_2.layout,
+        discoms.layout,
     ]
 )
 
@@ -115,8 +111,8 @@ app.validation_layout = html.Div(
 def display_page(pathname):
     if pathname == '/':
         return index_layout
-    elif pathname == '/page-1':
-        return page_1.layout
+    elif pathname == '/discoms':
+        return discoms.layout
     elif pathname == '/page-2':
         return page_2.layout
     else:

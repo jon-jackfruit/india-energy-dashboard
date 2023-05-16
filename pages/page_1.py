@@ -1,8 +1,10 @@
 ### Import Packages ###
 from dash import html, dcc
 from dash.dependencies import Input, Output
+
 ### Import Dash Instance ###
 from app import app
+
 ### Page 1 Layout and Callback ###
 layout = html.Div(
     children=[
