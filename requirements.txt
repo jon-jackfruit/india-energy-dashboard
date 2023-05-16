@@ -14,3 +14,5 @@ packaging==23.1
 plotly==5.14.1
 tenacity==8.2.2
 Werkzeug==2.3.4
+pandas==2.0.1
+plotly-express==0.4.1
