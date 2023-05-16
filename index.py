@@ -51,8 +51,6 @@ sidebar = html.Div(
 
 
 
-
-
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
 
@@ -73,8 +71,6 @@ page_container = html.Div(
 
 
 app.layout = page_container
-
-
 
 
 ### Index Page Layout ###
