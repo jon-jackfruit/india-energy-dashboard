@@ -1,7 +1,7 @@
 ### Import Packages ###
 import dash
 import dash_bootstrap_components as dbc
-from whitenoise import WhiteNoise
+
 
 ### Dash instance ###
 external_stylesheets = [dbc.themes.CYBORG]
@@ -13,5 +13,7 @@ app = dash.Dash(
 server = app.server
 
 # add a static file server
-server.wsgi_app=WhiteNoise(server.wsgi_app, root='static/')
+#from whitenoise import WhiteNoise
+#server.wsgi_app=WhiteNoise(server.wsgi_app, root='static/')
+
 

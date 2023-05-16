@@ -1,4 +1,5 @@
 venv
+static
 *.pyc
 .DS_Store
 .env
