@@ -10,7 +10,6 @@ app = dash.Dash(
         external_stylesheets=external_stylesheets,
         )
 
-server = app.server
 
 # add a static file server
 #from whitenoise import WhiteNoise

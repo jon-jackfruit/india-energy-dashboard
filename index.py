@@ -9,7 +9,8 @@ from app import app
 from pages import page_1
 from pages import page_2
 
-
+### Create server for Heroku to call
+server = app.server
 
 ### Sidebar ###
 # the style arguments for the sidebar. We use position:fixed and a fixed width
